@@ -21,7 +21,7 @@ describe('My Main Page application', () => {
     it('TC #2. Verify Explore docs', async () => {
 
         await MainPage.exploreBtn.scrollIntoView()
-        await browser.pause(2000)
+        await browser.pause(5000)
         await MainPage.exploreBtn.click()
         const handles = await browser.getWindowHandles()
         await browser.switchToWindow(handles[1])
@@ -72,6 +72,7 @@ describe('My Main Page application', () => {
         await MainPage.linkedinBtn.scrollIntoView()
         await MainPage.linkedinBtn.click()
         const handles = await browser.getWindowHandles()
+        await browser.pause(3000)
         await browser.switchToWindow(handles[1])
         const url = await browser.getUrl()
         expect(url.includes('https://www.linkedin.com/company/telnyx')).toBe(true);
@@ -84,6 +85,7 @@ describe('My Main Page application', () => {
         await MainPage.twitterBtn.click()
         const handles = await browser.getWindowHandles()
         await browser.switchToWindow(handles[1])
+        await browser.pause(3000)
         const url = await browser.getUrl()
         expect(url.includes('https://www.twitter.com/telnyx')).toBe(true);
       
@@ -95,6 +97,7 @@ describe('My Main Page application', () => {
         await MainPage.facebookBtn.click()
         const handles = await browser.getWindowHandles()
         await browser.switchToWindow(handles[1])
+        await browser.pause(3000)
         const url = await browser.getUrl()
         expect(url.includes('https://www.facebook.com/Telnyx/')).toBe(true);
        
@@ -106,6 +109,7 @@ describe('My Main Page application', () => {
         await MainPage.chatGpt.click()
         const handles = await browser.getWindowHandles()
         await browser.switchToWindow(handles[1])
+        await browser.pause(3000)
         const url = await browser.getUrl()
         expect(url.includes('https://chatgpt.com/')).toBe(true);
        
@@ -118,6 +122,7 @@ describe('My Main Page application', () => {
         await MainPage.claudeBtn.click()
         const handles = await browser.getWindowHandles()
         await browser.switchToWindow(handles[1])
+        await browser.pause(3000)
         const url = await browser.getUrl()
         expect(url.includes('https://claude.ai/')).toBe(true);
         
@@ -130,6 +135,7 @@ describe('My Main Page application', () => {
         await MainPage.perplexityBtn.click()
         const handles = await browser.getWindowHandles()
         await browser.switchToWindow(handles[1])
+        await browser.pause(3000)
         const url = await browser.getUrl()
         expect(url.includes('https://www.perplexity.ai/')).toBe(true);
         
@@ -141,6 +147,7 @@ describe('My Main Page application', () => {
         await MainPage.perplexityBtn.click()
         const handles = await browser.getWindowHandles()
         await browser.switchToWindow(handles[1])
+        await browser.pause(3000)
         const url = await browser.getUrl()
         expect(url.includes('https://www.perplexity.ai/')).toBe(true);
     })
@@ -151,6 +158,7 @@ describe('My Main Page application', () => {
         await MainPage.googleBtn.click()
         const handles = await browser.getWindowHandles()
         await browser.switchToWindow(handles[1])
+        await browser.pause(3000)
         const url = await browser.getUrl()
         expect(url.includes('https://www.google.com/')).toBe(true);
         
@@ -162,6 +170,7 @@ describe('My Main Page application', () => {
         await MainPage.xcomBtn.click()
         const handles = await browser.getWindowHandles()
         await browser.switchToWindow(handles[1])
+        await browser.pause(3000)
         const url = await browser.getUrl()
         expect(url.includes('https://x.com/')).toBe(true);
         

@@ -18,6 +18,8 @@
     "test:firefox": "npx wdio run wdio.firefox.conf.js",
     "test:safari": "npx wdio run wdio.safari.conf.js",
     "allure:generate": "allure generate allure-results --clean",
-    "allure:open": "allure open"
+    "allure:open": "allure open",
+    "docker build": "docker-compose build",
+    "docker up": "docker-compose up"
   }
 }
