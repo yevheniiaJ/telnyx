@@ -13,8 +13,7 @@ describe('My Main Page application', () => {
 
         await MainPage.dataPrivacyBtn.scrollIntoView()
         await MainPage.dataPrivacyBtn.click()
-        const url = await browser.getUrl()
-        expect(url).toHaveUrlContaining('https://telnyx.com/data-privacy')
+        expect(browser).toHaveUrlContaining('https://telnyx.com/data-privacy')
     })
 
 
