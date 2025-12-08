@@ -12,7 +12,11 @@
     "webdriverio": "^9.21.0"
   },
   "scripts": {
-    "wdio": "wdio run ./wdio.conf.js",
+    "tests": "npx wdio run wdio.conf.js",
+    "test:single": "npx wdio run wdio.conf.js --spec ./test/specs/signUp.e2e.js",
+    "test:chrome": "npx wdio run wdio.chrome.conf.js",
+    "test:firefox": "npx wdio run wdio.firefox.conf.js",
+    "test:safari": "npx wdio run wdio.safari.conf.js",
     "allure:generate": "allure generate allure-results --clean",
     "allure:open": "allure open"
   }

@@ -26,7 +26,7 @@ describe('My Main Page application', () => {
         const handles = await browser.getWindowHandles()
         await browser.switchToWindow(handles[1])
         const url = await browser.getUrl()
-        expect(url).toHaveUrlContaining('https://developers.telnyx.com/docs/overview')
+        expect(url.includes('https://developers.telnyx.com/docs/overview')).toBe(true);
     })
 
 
@@ -35,7 +35,8 @@ describe('My Main Page application', () => {
         await MainPage.signUpBtn.click()
         console.log('sign up is clicked')
         const url = await browser.getUrl()
-        expect(url).toHaveUrlContaining('https://telnyx.com/sign-up')
+        expect(url.includes('https://telnyx.com/sign-up')).toBe(true);
+      
     })
 
     it('TC #4. Verify our join community', async () => {
@@ -45,7 +46,8 @@ describe('My Main Page application', () => {
         const handles = await browser.getWindowHandles()
         await browser.switchToWindow(handles[1])
         const url = await browser.getUrl()
-        expect(url).toHaveUrlContaining('https://joinslack.telnyx.com/')
+        expect(url.includes('https://joinslack.telnyx.com/')).toBe(true);
+    
     })
 
     it('TC #5. Verify navigation to Voice AI Agents', async () => {
@@ -53,7 +55,8 @@ describe('My Main Page application', () => {
         await MainPage.aiAssistant.scrollIntoView()
         await MainPage.aiAssistant.click()
         const url = await browser.getUrl()
-        expect(url).toHaveUrlContaining('https://telnyx.com/products/voice-ai-agents')
+        expect(url.includes('https://telnyx.com/products/voice-ai-agents')).toBe(true);
+     
     })
 
     it('TC #6. Verify navigation to the Sign up page by using the Start building button', async () => {
@@ -61,7 +64,8 @@ describe('My Main Page application', () => {
         await MainPage.startBuilding.scrollIntoView()
         await MainPage.startBuilding.click()
         const url = await browser.getUrl()
-        expect(url).toHaveUrlContaining('https://telnyx.com/sign-up')
+        expect(url.includes('https://telnyx.com/sign-up')).toBe(true);
+    
     })
 
     it('TC #7. Verify navigation to Linkedin', async () => {
@@ -71,7 +75,8 @@ describe('My Main Page application', () => {
         const handles = await browser.getWindowHandles()
         await browser.switchToWindow(handles[1])
         const url = await browser.getUrl()
-        expect(url).toHaveUrlContaining('https://www.linkedin.com/company/telnyx')
+        expect(url.includes('https://www.linkedin.com/company/telnyx')).toBe(true);
+      
     })
 
     it('TC #8. Verify navigation to Twitter', async () => {
@@ -81,7 +86,8 @@ describe('My Main Page application', () => {
         const handles = await browser.getWindowHandles()
         await browser.switchToWindow(handles[1])
         const url = await browser.getUrl()
-        expect(url).toHaveUrlContaining('https://x.com/telnyx')
+        expect(url.includes('https://www.twitter.com/telnyx')).toBe(true);
+      
     })
 
     it('TC #9. Verify navigation to Facebook', async () => {
@@ -91,7 +97,8 @@ describe('My Main Page application', () => {
         const handles = await browser.getWindowHandles()
         await browser.switchToWindow(handles[1])
         const url = await browser.getUrl()
-        expect(url).toHaveUrlContaining('https://www.facebook.com/Telnyx/')
+        expect(url.includes('https://www.facebook.com/Telnyx/')).toBe(true);
+       
     })
 
     it('TC #10. Verify navigation to ChatGpt', async () => {
@@ -101,7 +108,8 @@ describe('My Main Page application', () => {
         const handles = await browser.getWindowHandles()
         await browser.switchToWindow(handles[1])
         const url = await browser.getUrl()
-        expect(url).toHaveUrlContaining('https://chatgpt.com/')
+        expect(url.includes('https://chatgpt.com/')).toBe(true);
+       
     })
 
 
@@ -112,7 +120,8 @@ describe('My Main Page application', () => {
         const handles = await browser.getWindowHandles()
         await browser.switchToWindow(handles[1])
         const url = await browser.getUrl()
-        expect(url).toHaveUrlContaining('https://claude.ai/')
+        expect(url.includes('https://claude.ai/')).toBe(true);
+        
     })
 
 
@@ -123,7 +132,8 @@ describe('My Main Page application', () => {
         const handles = await browser.getWindowHandles()
         await browser.switchToWindow(handles[1])
         const url = await browser.getUrl()
-        expect(url).toHaveUrlContaining('https://www.perplexity.ai/')
+        expect(url.includes('https://www.perplexity.ai/')).toBe(true);
+        
     })
 
     it('TC #13. Verify navigation to Perplexity', async () => {
@@ -133,7 +143,7 @@ describe('My Main Page application', () => {
         const handles = await browser.getWindowHandles()
         await browser.switchToWindow(handles[1])
         const url = await browser.getUrl()
-        expect(url).toHaveUrlContaining('https://www.perplexity.ai/')
+        expect(url.includes('https://www.perplexity.ai/')).toBe(true);
     })
 
     it('TC #14. Verify navigation to Google', async () => {
@@ -143,7 +153,8 @@ describe('My Main Page application', () => {
         const handles = await browser.getWindowHandles()
         await browser.switchToWindow(handles[1])
         const url = await browser.getUrl()
-        expect(url).toHaveUrlContaining('https://www.google.com/')
+        expect(url.includes('https://www.google.com/')).toBe(true);
+        
     })
 
     it('TC #15. Verify navigation to xCome', async () => {
@@ -153,7 +164,8 @@ describe('My Main Page application', () => {
         const handles = await browser.getWindowHandles()
         await browser.switchToWindow(handles[1])
         const url = await browser.getUrl()
-        expect(url).toHaveUrlContaining('https://x.com/')
+        expect(url.includes('https://x.com/')).toBe(true);
+        
     })
 
     it('TC #16. Verify Logo', async () => {
@@ -161,7 +173,7 @@ describe('My Main Page application', () => {
         await MainPage.signUpBtn.click()
         console.log('sign up is clicked')
         const url = await browser.getUrl()
-        expect(url).toHaveUrlContaining('https://telnyx.com/sign-up')
+        expect(url.includes('https://telnyx.com/sign-up')).toBe(true);
         await MainPage.logo.click()
         expect(MainPage.communityBtn).toBeDisplayed()
     })
@@ -171,7 +183,8 @@ describe('My Main Page application', () => {
         await MainPage.signUpForFreeBtn.scrollIntoView()
         await MainPage.signUpForFreeBtn.click()
         const url = await browser.getUrl()
-        expect(url).toHaveUrlContaining('https://telnyx.com/sign-up')
+        expect(url.includes('https://telnyx.com/sign-up')).toBe(true);
+        
     })
 
     it('TC #18. Verify Explore stories', async () => {
@@ -179,6 +192,7 @@ describe('My Main Page application', () => {
         await MainPage.exploreStoriesBtn.scrollIntoView()
         await MainPage.exploreStoriesBtn.click()
         const url = await browser.getUrl()
-        expect(url).toHaveUrlContaining('https://telnyx.com/customer-stories')
+        expect(url.includes('https://telnyx.com/customer-stories')).toBe(true);
+       
     })
 })
