@@ -1,4 +1,3 @@
-import 'expect-webdriverio';
 
 export const config = {
 
