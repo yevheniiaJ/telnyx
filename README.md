@@ -9,5 +9,7 @@ Open pagejsjs/page.js , change url
 3. • Connect reporting Allure-report.
 - Open allure report: npx allure open
 4. Make a pipeline on GitHub and deploy the results to GitHub Pages.
-
-
+- Added tests.yaml
+5. Write npm script to run all tests, single file, run tests with chrome browser, firefox browser
+Added scripts in package.json file
+6. Prepare yourself or find a ready-made docker image to run your project in a docker image, both on the pipeline and locally.
