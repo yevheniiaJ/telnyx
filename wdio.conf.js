@@ -10,6 +10,9 @@ export const config = {
         }
 
     },
+    specFileRetries:2,
+    specFileRetriesDelay: 2,
+    specFileRetriesDeferred: true,
     //
     // ====================
     // Runner Configuration

@@ -33,7 +33,6 @@ describe('My Main Page application', () => {
     it('TC #3. Verify Navigation to the Sign up page', async () => {
 
         await MainPage.signUpBtn.click()
-        console.log('sign up is clicked')
         const url = await browser.getUrl()
         expect(url.includes('https://telnyx.com/sign-up')).toBe(true);
       
@@ -45,7 +44,6 @@ describe('My Main Page application', () => {
         await MainPage.communityBtn.click()
         const handles = await browser.getWindowHandles()
         await browser.switchToWindow(handles[1])
-        await browser.pause(1000)
         const url = await browser.getUrl()
         expect(url.includes('https://joinslack.telnyx.com/')).toBe(true);
     
