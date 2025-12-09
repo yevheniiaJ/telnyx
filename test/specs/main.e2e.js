@@ -123,6 +123,7 @@ describe('My Main Page application', () => {
         await MainPage.claudeBtn.click()
         const handles = await browser.getWindowHandles()
         await browser.switchToWindow(handles[1])
+        await browser.pause(3000)
         const url = await browser.getUrl()
         expect(url).toContain('claude.ai')
         
@@ -135,6 +136,7 @@ describe('My Main Page application', () => {
         await MainPage.perplexityBtn.click()
         const handles = await browser.getWindowHandles()
         await browser.switchToWindow(handles[1])
+        await browser.pause(3000)
         const url = await browser.getUrl()
         expect(url).toContain('perplexity')
         
@@ -154,6 +156,7 @@ describe('My Main Page application', () => {
         await MainPage.googleBtn.click()
         const handles = await browser.getWindowHandles()
         await browser.switchToWindow(handles[1])
+        await browser.pause(3000)
         const url = await browser.getUrl()
         expect(url).toContain('google')
         

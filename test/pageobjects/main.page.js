@@ -28,15 +28,15 @@ class MainPage extends Page {
     }
 
     get linkedinBtn() {
-        return $(`//*[@aria-describedby='linkedin']`)
+        return $(`//a[@href='https://www.linkedin.com/company/telnyx']`)
     }
 
     get twitterBtn() {
-        return $(`//*[@aria-describedby='twitter']`)
+        return $(`//a[@href='https://x.com/telnyx']`)
     }
 
     get facebookBtn() {
-        return $(`//*[@aria-describedby='facebook']`)
+        return $(`//a[@href='https://www.facebook.com/Telnyx/']`)
     }
 
     get chatGpt() {
@@ -50,7 +50,7 @@ class MainPage extends Page {
     get voiceAi() {
         return $(`//a[@href='/products/voice-ai-agents']`)
     }
-    
+
     get perplexityBtn() {
         return $(`//ul[@class='flex gap-xs ']/li[3]/a`)
     }
