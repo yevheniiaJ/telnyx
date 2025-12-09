@@ -73,7 +73,7 @@ describe('My Main Page application', () => {
 
         await browser.execute((el) => {
             el.scrollIntoView({block: 'center', inline: 'nearest'})
-        })
+        }, MainPage.linkedinBtn)
 
         await MainPage.linkedinBtn.waitForDisplayed({timeout: 4000})
         await MainPage.linkedinBtn.click()
