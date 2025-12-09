@@ -40,8 +40,7 @@ describe('My Main Page application', () => {
 
     it('TC #4. Verify our join community', async () => {
 
-        await MainPage.communityBtn.scrollIntoView()
-        await browser.pause(4000)
+        await MainPage.communityBtn.waitForClickable({timeout:4000})
         await MainPage.communityBtn.click()
         const handles = await browser.getWindowHandles()
         await browser.switchToWindow(handles[1])
@@ -52,8 +51,7 @@ describe('My Main Page application', () => {
 
     it('TC #5. Verify navigation to Voice AI Agents', async () => {
 
-        await MainPage.aiAssistant.scrollIntoView()
-        await browser.pause(4000)
+        await MainPage.aiAssistant.waitForClickable({timeout: 4000})
         await MainPage.aiAssistant.click()
         const url = await browser.getUrl()
         expect(url.includes('https://telnyx.com/products/voice-ai-agents')).toBe(true);
