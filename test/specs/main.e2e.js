@@ -41,6 +41,7 @@ describe('My Main Page application', () => {
     it('TC #4. Verify our join community', async () => {
 
         await MainPage.communityBtn.scrollIntoView()
+        await browser.pause(4000)
         await MainPage.communityBtn.click()
         const handles = await browser.getWindowHandles()
         await browser.switchToWindow(handles[1])
@@ -52,6 +53,7 @@ describe('My Main Page application', () => {
     it('TC #5. Verify navigation to Voice AI Agents', async () => {
 
         await MainPage.aiAssistant.scrollIntoView()
+        await browser.pause(4000)
         await MainPage.aiAssistant.click()
         const url = await browser.getUrl()
         expect(url.includes('https://telnyx.com/products/voice-ai-agents')).toBe(true);
@@ -72,7 +74,6 @@ describe('My Main Page application', () => {
         await MainPage.linkedinBtn.scrollIntoView()
         await MainPage.linkedinBtn.click()
         const handles = await browser.getWindowHandles()
-        await browser.pause(3000)
         await browser.switchToWindow(handles[1])
         const url = await browser.getUrl()
         expect(url.includes('https://www.linkedin.com/company/telnyx')).toBe(true);
@@ -82,6 +83,7 @@ describe('My Main Page application', () => {
     it('TC #8. Verify navigation to Twitter', async () => {
 
         await MainPage.twitterBtn.scrollIntoView()
+        await browser.pause(4000)
         await MainPage.twitterBtn.click()
         const handles = await browser.getWindowHandles()
         await browser.switchToWindow(handles[1])
