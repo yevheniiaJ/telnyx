@@ -13,3 +13,4 @@ Open pagejsjs/page.js , change url
 5. Write npm script to run all tests, single file, run tests with chrome browser, firefox browser
 Added scripts in package.json file
 6. Prepare yourself or find a ready-made docker image to run your project in a docker image, both on the pipeline and locally.
+Added ci.yaml, Dockerfile, docker-compose.
