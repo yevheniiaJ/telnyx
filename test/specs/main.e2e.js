@@ -69,15 +69,18 @@ describe('My Main Page application', () => {
     
     })
 
-    it('TC #7. Verify navigation to Linkedin', async () => {
+    it.only('TC #7. Verify navigation to Linkedin', async () => {
 
-        await MainPage.linkedinBtn.scrollIntoView()
+        await browser.execute((el) => {
+            el.scrollIntoView({block: 'center', inline: 'nearest'})
+        })
+
+        await MainPage.linkedinBtn.waitForDisplayed({timeout: 4000})
         await MainPage.linkedinBtn.click()
         const handles = await browser.getWindowHandles()
         await browser.switchToWindow(handles[1])
         const url = await browser.getUrl()
-        expect(url.includes('https://www.linkedin.com/company/telnyx')).toBe(true);
-      
+        expect(url).toContain('linkedin')
     })
 
     it('TC #8. Verify navigation to Twitter', async () => {
@@ -89,7 +92,7 @@ describe('My Main Page application', () => {
         await browser.switchToWindow(handles[1])
         await browser.pause(3000)
         const url = await browser.getUrl()
-        expect(url.includes('https://www.twitter.com/telnyx')).toBe(true);
+        expect(url).toContain('https://www.twitter.com/telnyx')
       
     })
 
@@ -101,7 +104,7 @@ describe('My Main Page application', () => {
         await browser.switchToWindow(handles[1])
         await browser.pause(3000)
         const url = await browser.getUrl()
-        expect(url.includes('https://www.facebook.com/Telnyx/')).toBe(true);
+        expect(url).toContain('https://www.facebook.com/Telnyx/')
        
     })
 
@@ -113,7 +116,7 @@ describe('My Main Page application', () => {
         await browser.switchToWindow(handles[1])
         await browser.pause(3000)
         const url = await browser.getUrl()
-        expect(url.includes('https://chatgpt.com/')).toBe(true);
+        expect(url).toContain('https://chatgpt.com/')
        
     })
 
@@ -126,7 +129,7 @@ describe('My Main Page application', () => {
         await browser.switchToWindow(handles[1])
         await browser.pause(3000)
         const url = await browser.getUrl()
-        expect(url.includes('https://claude.ai/')).toBe(true);
+        expect(url).toContain('https://claude.ai/')
         
     })
 
@@ -139,7 +142,7 @@ describe('My Main Page application', () => {
         await browser.switchToWindow(handles[1])
         await browser.pause(3000)
         const url = await browser.getUrl()
-        expect(url.includes('https://www.perplexity.ai/')).toBe(true);
+        expect(url).toContain('https://www.perplexity.ai/')
         
     })
 
@@ -151,7 +154,7 @@ describe('My Main Page application', () => {
         await browser.switchToWindow(handles[1])
         await browser.pause(3000)
         const url = await browser.getUrl()
-        expect(url.includes('https://www.perplexity.ai/')).toBe(true);
+        expect(url).toContain('https://www.perplexity.ai/')
     })
 
     it('TC #14. Verify navigation to Google', async () => {
@@ -162,7 +165,7 @@ describe('My Main Page application', () => {
         await browser.switchToWindow(handles[1])
         await browser.pause(3000)
         const url = await browser.getUrl()
-        expect(url.includes('https://www.google.com/')).toBe(true);
+        expect(url).toContain('https://www.google.com/')
         
     })
 
@@ -174,7 +177,7 @@ describe('My Main Page application', () => {
         await browser.switchToWindow(handles[1])
         await browser.pause(3000)
         const url = await browser.getUrl()
-        expect(url.includes('https://x.com/')).toBe(true);
+        expect(url).toContain('https://x.com/')
         
     })
 

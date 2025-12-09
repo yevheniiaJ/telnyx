@@ -35,7 +35,7 @@ export const config = {
     // of the config file unless it's absolute.
     //
     specs: [
-        './test/specs/signUp.e2e.js'
+        './test/specs/main.e2e.js'
     ],
     // Patterns to exclude.
     exclude: [

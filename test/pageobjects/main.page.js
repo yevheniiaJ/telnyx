@@ -6,13 +6,6 @@ class MainPage extends Page {
     get acceptCookie() {
         return $(`//button[@id='onetrust-accept-btn-handler']`)
     }
-    get hamburgerMenu() {
-        return $(`//button[@aria-controls='main-menu-content']`)
-    }
-
-    get logInBtn() {
-        return $(`//div[@id='main-menu']//a[@href='https://portal.telnyx.com']`)
-    }
 
     get exploreBtn() {
         return $(`//span[@data-content='Explore Dev Docs']`)
