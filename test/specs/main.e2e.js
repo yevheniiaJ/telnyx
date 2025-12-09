@@ -71,7 +71,7 @@ describe('My Main Page application', () => {
 
     it.only('TC #7. Verify navigation to Linkedin', async () => {
 
-        await MainPage.scrollIntoView.scrollIntoView()
+        
         await MainPage.linkedinBtn.waitForDisplayed({timeout: 4000})
         await MainPage.linkedinBtn.click()
         const handles = await browser.getWindowHandles()
