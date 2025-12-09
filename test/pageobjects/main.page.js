@@ -47,6 +47,10 @@ class MainPage extends Page {
         return $(`//ul[@class='flex gap-xs ']/li[2]/a`)
     }
 
+    get voiceAi() {
+        return $(`//a[@href='/products/voice-ai-agents']`)
+    }
+    
     get perplexityBtn() {
         return $(`//ul[@class='flex gap-xs ']/li[3]/a`)
     }
