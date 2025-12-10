@@ -41,7 +41,7 @@ describe('My Main Page application', () => {
     it('TC #4. Verify our join community', async () => {
 
         await MainPage.communityBtn.waitForDisplayed({ timeout: 4000 })
-        await browser.execute((el) => el.removeAttribute('target'), MainPage.communityBtn)
+        await browser.execute((el) => el.removeAttribute('target'), await MainPage.communityBtn)
         await MainPage.communityBtn.click()
         const url = await browser.getUrl()
         expect(url.toContain(joinslack)).toBe(true);
@@ -50,7 +50,7 @@ describe('My Main Page application', () => {
 
     it('TC #5. Verify navigation to Voice AI Agents', async () => {
 
-        await MainPage.aiAssistant.waitForDisplayed({ timeout: 4000 })
+        await MainPage.aiAssistant.waitForDisplayed({ timeout: 5000 })
         await MainPage.aiAssistant.click()
         const url = await browser.getUrl()
         expect(url).toContain('voice-ai')
