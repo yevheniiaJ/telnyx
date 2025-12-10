@@ -16,7 +16,7 @@ class MainPage extends Page {
     }
 
     get communityBtn() {
-        return $(`//span[@data-content='Join our Slack community']`)
+        return $(`//a[@href='https://joinslack.telnyx.com/']`)
     }
 
     get aiAssistant() {

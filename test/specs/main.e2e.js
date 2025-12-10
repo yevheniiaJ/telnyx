@@ -40,11 +40,9 @@ describe('My Main Page application', () => {
 
     it('TC #4. Verify our join community', async () => {
 
-        await MainPage.startBuilding.scrollIntoView()
         await MainPage.communityBtn.waitForDisplayed({ timeout: 4000 })
+        await browser.execute((el) => el.removeAttribute('target'), MainPage.communityBtn)
         await MainPage.communityBtn.click()
-        const handles = await browser.getWindowHandles()
-        await browser.switchToWindow(handles[1])
         const url = await browser.getUrl()
         expect(url.toContain(joinslack)).toBe(true);
 
@@ -52,7 +50,6 @@ describe('My Main Page application', () => {
 
     it('TC #5. Verify navigation to Voice AI Agents', async () => {
 
-        await MainPage.startBuilding.scrollIntoView()
         await MainPage.aiAssistant.waitForDisplayed({ timeout: 4000 })
         await MainPage.aiAssistant.click()
         const url = await browser.getUrl()
@@ -71,31 +68,26 @@ describe('My Main Page application', () => {
 
     it('TC #7. Verify navigation to Linkedin', async () => {
 
-        await MainPage.startBuilding.scrollIntoView()
         await MainPage.linkedinBtn.waitForDisplayed({ timeout: 4000 })
+        await browser.execute((el) => el.removeAttribute('target'), MainPage.linkedinBtn)
         await MainPage.linkedinBtn.click()
-        const handles = await browser.getWindowHandles()
-        await browser.switchToWindow(handles[1])
         const url = await browser.getUrl()
         expect(url).toContain('linkedin')
     })
 
     it('TC #8. Verify navigation to Twitter', async () => {
 
-        await MainPage.startBuilding.scrollIntoView()
         await MainPage.twitterBtn.waitForDisplayed({ timeout: 5000 })
+        await browser.execute((el) => el.removeAttribute('target'), MainPage.twitterBtn)
         await MainPage.twitterBtn.click()
-        const handles = await browser.getWindowHandles()
-        await browser.switchToWindow(handles[1])
         const url = await browser.getUrl()
         expect(url).toContain('twitter')
 
     })
     it('TC #9. Verify navigation to Facebook', async () => {
 
-        await MainPage.startBuilding.scrollIntoView()
         await MainPage.facebookBtn.waitForDisplayed({ timeout: 5000 })
-        await browser.execute((el) => el.removeAttribute('target'), await MainPage.facebookBtn)
+        await browser.execute((el) => el.removeAttribute('target'), MainPage.facebookBtn)
         await MainPage.facebookBtn.click()
         const url = await browser.getUrl()
         expect(url).toContain('facebook')
@@ -105,12 +97,9 @@ describe('My Main Page application', () => {
 
     it('TC #10. Verify navigation to ChatGpt', async () => {
 
-        await MainPage.startBuilding.scrollIntoView()
         await MainPage.chatGpt.waitForDisplayed({ timeout: 4000 })
+        await browser.execute((el) => el.removeAttribute('target'), MainPage.chatGpt)
         await MainPage.chatGpt.click()
-        const handles = await browser.getWindowHandles()
-        await browser.switchToWindow(handles[1])
-        await browser.pause(3000)
         const url = await browser.getUrl()
         expect(url).toContain('chatgpt')
 
@@ -119,12 +108,9 @@ describe('My Main Page application', () => {
 
     it('TC #11. Verify navigation to Claude', async () => {
 
-        await MainPage.startBuilding.scrollIntoView()
         await MainPage.claudeBtn.waitForDisplayed({ timeout: 4000 })
+        await browser.execute((el) => el.removeAttribute('target'), MainPage.claudeBtn)
         await MainPage.claudeBtn.click()
-        const handles = await browser.getWindowHandles()
-        await browser.switchToWindow(handles[1])
-        await browser.pause(3000)
         const url = await browser.getUrl()
         expect(url).toContain('claude.ai')
 
@@ -133,12 +119,9 @@ describe('My Main Page application', () => {
 
     it('TC #12. Verify navigation to Perplexity', async () => {
 
-        await MainPage.startBuilding.scrollIntoView()
         await MainPage.perplexityBtn.waitForDisplayed({ timeout: 4000 })
+        await browser.execute((el) => el.removeAttribute('target'), MainPage.perplexityBtn)
         await MainPage.perplexityBtn.click()
-        const handles = await browser.getWindowHandles()
-        await browser.switchToWindow(handles[1])
-        await browser.pause(3000)
         const url = await browser.getUrl()
         expect(url).toContain('perplexity')
 
@@ -146,7 +129,6 @@ describe('My Main Page application', () => {
 
     it('TC #13. Verify Voice Ai', async () => {
 
-        await MainPage.startBuilding.scrollIntoView()
         await MainPage.voiceAi.waitForDisplayed({ timeout: 4000 })
         await MainPage.voiceAi.click()
         const url = await browser.getUrl()
@@ -155,12 +137,9 @@ describe('My Main Page application', () => {
 
     it('TC #14. Verify navigation to Google', async () => {
 
-        await MainPage.startBuilding.scrollIntoView()
         await MainPage.googleBtn.waitForDisplayed({ timeout: 4000 })
+        await browser.execute((el) => el.removeAttribute('target'), MainPage.googleBtn)
         await MainPage.googleBtn.click()
-        const handles = await browser.getWindowHandles()
-        await browser.switchToWindow(handles[1])
-        await browser.pause(3000)
         const url = await browser.getUrl()
         expect(url).toContain('google')
 
