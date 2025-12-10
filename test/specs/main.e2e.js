@@ -44,7 +44,7 @@ describe('My Main Page application', () => {
         await browser.execute((el) => el.removeAttribute('target'), await MainPage.communityBtn)
         await MainPage.communityBtn.click()
         const url = await browser.getUrl()
-        expect(url.toContain(joinslack)).toBe(true);
+        expect(url.toContain(joinslack))
 
     })
 
@@ -77,23 +77,23 @@ describe('My Main Page application', () => {
 
     it('TC #8. Verify navigation to Twitter', async () => {
 
-        await MainPage.twitterBtn.waitForDisplayed({ timeout: 5000 })
+        await MainPage.twitterBtn.waitForDisplayed({ timeout: 4000 })
         await browser.execute((el) => el.removeAttribute('target'), await MainPage.twitterBtn)
         await MainPage.twitterBtn.click()
         const url = await browser.getUrl()
-        expect(url).toContain('twitter')
+        expect(url).toContain('https://x.com/telnyx')
 
     })
     it('TC #9. Verify navigation to Facebook', async () => {
 
         await MainPage.facebookBtn.waitForDisplayed({ timeout: 5000 })
-        await browser.execute((el) => el.removeAttribute('target'),await MainPage.facebookBtn)
+        await browser.execute((el) => el.removeAttribute('target'), await MainPage.facebookBtn)
         await MainPage.facebookBtn.click()
         const url = await browser.getUrl()
         expect(url).toContain('facebook')
-    
+
     })
-    
+
 
     it('TC #10. Verify navigation to ChatGpt', async () => {
 

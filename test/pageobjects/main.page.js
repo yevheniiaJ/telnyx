@@ -20,7 +20,7 @@ class MainPage extends Page {
     }
 
     get aiAssistant() {
-        return $(`//span[@data-content='EXPLORE OUR AI ASSISTANT']`)
+        return $(`//a[@href='https://telnyx.com/products/voice-ai-agents']//span[@data-content='EXPLORE OUR AI ASSISTANT']`)
     }
 
     get startBuilding() {
