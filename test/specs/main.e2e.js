@@ -44,7 +44,7 @@ describe('My Main Page application', () => {
         await browser.execute((el) => el.removeAttribute('target'), await MainPage.communityBtn)
         await MainPage.communityBtn.click()
         const url = await browser.getUrl()
-        expect(url.toContain('joinslack'))
+        expect(url).toContain('joinslack')
 
     })
 
