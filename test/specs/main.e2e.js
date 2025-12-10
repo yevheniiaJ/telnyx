@@ -44,13 +44,13 @@ describe('My Main Page application', () => {
         await browser.execute((el) => el.removeAttribute('target'), await MainPage.communityBtn)
         await MainPage.communityBtn.click()
         const url = await browser.getUrl()
-        expect(url.toContain(joinslack))
+        expect(url.toContain('joinslack'))
 
     })
 
     it('TC #5. Verify navigation to Voice AI Agents', async () => {
 
-        await MainPage.aiAssistant.waitForDisplayed({ timeout: 5000 })
+        await MainPage.aiAssistant.waitForClickable({ timeout: 5000 })
         await MainPage.aiAssistant.click()
         const url = await browser.getUrl()
         expect(url).toContain('voice-ai')
