@@ -1,7 +1,7 @@
 
 export const config = {
 
-    specFileRetries:2,
+    specFileRetries: 2,
     specFileRetriesDelay: 2,
     specFileRetriesDeferred: true,
     //
@@ -10,6 +10,13 @@ export const config = {
     // ====================
     // WebdriverIO supports running e2e tests as well as unit and component tests.
     runner: 'local',
+
+    services: ['selenium-standalone'],
+
+    hostname: 'chrome',
+    port: 4444,
+    path: '/',
+
     //
     // ==================
     // Specify Test Files
@@ -58,7 +65,7 @@ export const config = {
         browserName: 'chrome',
         'goog:chromeOptions': {
             args: ['--headless', '--disable-gpu', '--no-sandbox', '--disable-dev-shm-usage', '--window-size=1920,1080']
-          }         
+        }
     }],
 
     //
@@ -136,7 +143,7 @@ export const config = {
         disableWebdriverStepsReporting: true,
         disableWebdriverScreenshotsReporting: false,
     }]],
-    
+
 
     // Options to be passed to Mocha.
     // See the full list at http://mochajs.org/

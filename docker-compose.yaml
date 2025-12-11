@@ -1,9 +1,14 @@
-version: '3'
+version: "3.9"
 services:
-  tests:
+  chrome:
+    image: selenium/standalone-chrome:latest
+    shm_size: "2gb"
+    ports:
+      - "4444:4444"
+
+  wdio:
     build: .
-    volumes:
-      - .:/app
+    depends_on:
+      - chrome
     environment:
-      - DISPLAY=:99
-    command: npx wdio run wdio.conf.js
+      - WDIO_BASE_URL=http://selenium:4444
