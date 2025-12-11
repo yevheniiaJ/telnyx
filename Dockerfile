@@ -1,21 +1,6 @@
-FROM node:18
+FROM selenium/standalone-chrome:134.0-20250323 
+ADD . /app
 
-
-WORKDIR /app
-COPY package*.json ./
 RUN npm install
 
-COPY . .
-
-RUN apt-get update && apt-get install -y \
-    wget gnupg unzip curl xvfb libnss3 libatk-bridge2.0-0 libgtk-3-0 libxss1 libasound2 \
-    && rm -rf /var/lib/apt/lists/*
-
-RUN wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | apt-key add - \
-  && echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" \
-  > /etc/apt/sources.list.d/google-chrome.list \
-  && apt-get update \
-  && apt-get install -y google-chrome-stable
-
-
-CMD ["npx", "wdio", "run", "wdio.conf.js"]
+CMD npx wdio
