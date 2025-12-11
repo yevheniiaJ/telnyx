@@ -1,4 +1,6 @@
-FROM seleniarm/standalone-chromium
+FROM selenium/node-chrome:latest
+
+USER root
 
 WORKDIR /app
 
