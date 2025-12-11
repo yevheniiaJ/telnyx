@@ -3,4 +3,4 @@ ADD . /app
 
 RUN npm install
 
-CMD npx wdio
+CMD ["npx", "wdio", "run", "wdio.conf.js"]

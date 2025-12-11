@@ -1,5 +1,9 @@
 import { expect, browser } from '@wdio/globals'
 import SignUpPage from '../pageobjects/signUp.page.js'
+import { testData } from '../data/testData.js';
+
+
+
 
 describe('Sign Up Page application', () => {
 
@@ -23,14 +27,13 @@ describe('Sign Up Page application', () => {
 
     it('TC #2. Verify the Sign up flow with invalid data', async () => {
 
-        const testData = browser.options.data.invalidDataSignUp;
         await browser.pause(2000)
-
+        const data = testData.invalidDataSignUp;
         await SignUpPage.signUp(
-            testData.companyEmail,
-            testData.firstName,
-            testData.lastName,
-            testData.password
+            data.companyEmail,
+            data.firstName,
+            data.lastName,
+            data.password
         );
         expect(SignUpPage.error).toBeDisplayed()
     })
