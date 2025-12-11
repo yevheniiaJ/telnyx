@@ -1,9 +1,8 @@
-FROM node:20
+FROM seleniarm/standalone-chromium
 
 WORKDIR /app
 
 COPY package*.json ./
-
 RUN npm install
 
 COPY . .
